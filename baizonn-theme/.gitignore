@@ -1,0 +1,22 @@
+# Ignore WordPress core files
+wp-admin/
+wp-includes/
+
+# Ignore local development files (like Docker, Vagrant, etc.)
+.docker/
+.vagrant/
+*.log
+*.swp
+node_modules/
+
+# Ignore WordPress config files
+wp-config.php
+
+# Ignore backup files or temporary files
+*~
+*.bak
+*.tmp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
