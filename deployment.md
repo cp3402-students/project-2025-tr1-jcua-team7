@@ -23,27 +23,29 @@ Each team member set up their own local environment to begin WordPress theme dev
 
 ##  Theme Development
 
-We selected the **Underscores (_s)** starter theme to create a fully custom WordPress theme called `baizonn-theme`.
 
-### Steps:
-- Downloaded Underscores from [https://underscores.me](https://underscores.me)
-- Customized `style.css`, `header.php`, `footer.php`, and added `index.php`
+We are building a custom theme using [_s (Underscores)](https://underscores.me) as the base.
 
----
+### Theme Name:
+`baizonn-theme`
 
-##  Version Control with GitHub
+### Theme Modifications:
+- Customized:
+  - `style.css` – Theme header + styling
+  - `header.php` – Site title, logo, and dynamic navigation
+  - `footer.php` – Compliant with WordPress standards
+  - `functions.php` – Registered `main-menu`, `footer-menu`, logo, and theme supports
 
-We are using **GitHub** for version control and collaboration.
-
-### Repository:
-- Created via GitHub Classroom 
-- Only the `baizonn-theme` folder is under version control
-
-### Workflow:
-- Abuince initialized the repo and pushed the first theme structure
-- Other team members clone the repo and push updates to the theme
 
 ---
+
+## GitHub & Version Control
+
+We are using GitHub Classroom for version control.
+
+### 📍 Repo:
+[https://github.com/cp3402-students/project-2025-tr1-jcua-team7](https://github.com/cp3402-students/project-2025-tr1-jcua-team7)
+
 
 ##  Project Management & Communication
 
