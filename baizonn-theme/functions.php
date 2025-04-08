@@ -49,7 +49,8 @@ function baizonn_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'baizonn-theme' ),
+			'main-menu' => esc_html__( 'Primary', 'baizonn-theme' ),
+			'footer-menu' => esc_html__( 'Footer', 'baizonn-theme' )
 		)
 	);
 
@@ -84,6 +85,14 @@ function baizonn_theme_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	add_theme_support( 'wp-block-styles' );
+
+	add_theme_support( 'responsive-embeds' );
+
+	add_theme_support( 'align-wide' );
+
+
 
 	/**
 	 * Add support for core custom logo.
