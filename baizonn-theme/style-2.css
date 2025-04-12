@@ -1,0 +1,595 @@
+@charset "UTF-8";
+
+/*!
+Theme Name: jcua-team7-theme
+Theme URI: http://underscores.me/
+Author: Aubiene
+Author URI: http://underscores.me/
+Description: custom theme built for the JCUA team project, based on Underscores. It features a simple and clean design with easy-to-edit templates.
+Version: 1.0.0
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: jcua-team7-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+jcua-team7-theme is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+
+/* SETTINGS */
+:root {
+    /* Font Family */
+    --global--font-primary: 'Poppins', sans-serif;
+    --global--font-secondary: 'Open Sans', sans-serif;
+
+    /* Font Size */
+    --global--font-size-base: 1rem;
+    --global--font-size-xs: 0.875rem;
+    --global--font-size-sm: 1rem;
+    --global--font-size-md: 1.125rem;
+    --global--font-size-lg: 1.5rem;
+    --global--font-size-xl: 2rem;
+    --global--font-size-xxl: 3rem;
+    --global--font-size-xxxl: 4rem;
+    --global--font-size-page-title: var(--global--font-size-xxl);
+
+    /* Line Height */
+    --global--line-height-body: 1.6;
+    --global--line-height-heading: 1.3;
+    --global--line-height-page-title: 1.2;
+
+    /* Headings */
+    --heading--font-family: var(--global--font-primary);
+    --heading--font-size-h6: var(--global--font-size-sm);
+    --heading--font-size-h5: var(--global--font-size-md);
+    --heading--font-size-h4: var(--global--font-size-lg);
+    --heading--font-size-h3: var(--global--font-size-xl);
+    --heading--font-size-h2: var(--global--font-size-xxl);
+    --heading--font-size-h1: var(--global--font-size-xxxl);
+    --heading--font-weight: 500;
+    --heading--font-weight-page-title: 400;
+
+    /* Colors */
+    --global--color-black: #000;
+    --global--color-dark-blue: #1a2b47;
+    --global--color-blue: #2c3e50;
+    --global--color-light-blue: #f5f7fa;
+    --global--color-cyan: #4ecdc4;
+    --global--color-purple: #8e44ad;
+    --global--color-pink: #ff6b6b;
+    --global--color-orange: #f39c12;
+    --global--color-yellow: #f1c40f;
+    --global--color-white: #fff;
+    --global--color-white-50: rgba(255, 255, 255, 0.5);
+    --global--color-white-90: rgba(255, 255, 255, 0.9);
+    --global--color-primary: var(--global--color-dark-blue);
+    --global--color-secondary: var(--global--color-blue);
+    --global--color-background: var(--global--color-light-blue);
+    --global--color-border: var(--global--color-primary);
+
+    /* Spacing */
+    --global--spacing-unit: 16px;
+    --global--spacing-horizontal: 24px;
+    --global--spacing-vertical: 32px;
+
+    /* Elevation */
+    --global--elevation: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVE DESIGN */
+@media only screen and (min-width: 640px) {
+    :root {
+        --global--font-size-xl: 2.5rem;
+        --global--font-size-xxl: 3.5rem;
+        --global--font-size-xxxl: 5rem;
+        --heading--font-size-h3: 2.25rem;
+        --heading--font-size-h2: 3rem;
+    }
+}
+
+/* GENERIC STYLES */
+body {
+    font-family: var(--global--font-secondary);
+    font-size: var(--global--font-size-base);
+    line-height: var(--global--line-height-body);
+    color: var(--global--color-primary);
+    background-color: var(--global--color-background);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading--font-family);
+    font-weight: var(--heading--font-weight);
+    line-height: var(--global--line-height-heading);
+    color: var(--global--color-secondary);
+    margin: 0 0 1.5rem 0;
+}
+
+p {
+    margin: 0 0 1.5rem 0;
+}
+
+a {
+    color: var(--global--color-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--global--color-purple);
+}
+
+/* BLOCKS */
+.wp-block-button {
+    margin: 1.5rem 0;
+}
+
+.wp-block-button .wp-block-button__link {
+    background-color: var(--global--color-cyan);
+    color: var(--global--color-white);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.wp-block-button .wp-block-button__link:hover {
+    background-color: var(--global--color-purple);
+    color: var(--global--color-white);
+}
+
+.wp-block-image {
+    margin: 1.5rem 0;
+}
+
+.wp-block-image figcaption {
+    color: var(--global--color-secondary);
+    font-size: var(--global--font-size-sm);
+    margin-top: 0.5rem;
+}
+
+.wp-block-quote {
+    border-left: 3px solid var(--global--color-cyan);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--global--color-secondary);
+}
+
+.wp-block-gallery {
+    margin: 1.5rem 0;
+}
+
+.wp-block-gallery .blocks-gallery-item {
+    margin: 0.5rem;
+}
+
+.wp-block-cover {
+    min-height: 400px;
+    background-color: var(--global--color-dark-blue);
+    color: var(--global--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.wp-block-cover .wp-block-cover__inner-container {
+    max-width: 800px;
+}
+
+.wp-block-cover h2 {
+    font-size: var(--global--font-size-xxl);
+    margin-bottom: 1rem;
+}
+
+.wp-block-cover p {
+    font-size: var(--global--font-size-lg);
+    margin-bottom: 1.5rem;
+}
+
+/* COMPONENTS */
+.site-header {
+    background-color: var(--global--color-white);
+    padding: 1rem 0;
+    box-shadow: var(--global--elevation);
+}
+
+.site-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.site-footer {
+    background-color: var(--global--color-dark-blue);
+    color: var(--global--color-white);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.site-footer a {
+    color: var(--global--color-cyan);
+}
+
+/* UTILITIES */
+.has-text-align-center {
+    text-align: center;
+}
+
+.has-text-align-left {
+    text-align: left;
+}
+
+.has-text-align-right {
+    text-align: right;
+}
+
+.has-background {
+    background-color: var(--global--color-cyan);
+    color: var(--global--color-white);
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.has-background a {
+    color: var(--global--color-white);
+}
+
+.has-background a:hover {
+    color: var(--global--color-light-blue);
+}
+
+/* RESPONSIVE UTILITIES */
+@media only screen and (max-width: 639px) {
+    .site-main {
+        padding: 1rem;
+    }
+
+    .wp-block-cover {
+        min-height: 300px;
+    }
+
+    .wp-block-cover h2 {
+        font-size: var(--global--font-size-xl);
+    }
+}
+
+/* FORMS */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--global--color-border);
+    border-radius: 4px;
+    font-family: var(--global--font-secondary);
+    font-size: var(--global--font-size-base);
+    color: var(--global--color-primary);
+    margin-bottom: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--global--color-cyan);
+}
+
+button,
+input[type="submit"] {
+    background-color: var(--global--color-cyan);
+    color: var(--global--color-white);
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--global--font-secondary);
+    font-size: var(--global--font-size-base);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: var(--global--color-purple);
+}
+
+/* NAVIGATION */
+.primary-navigation {
+    background-color: var(--global--color-white);
+    border-bottom: 1px solid var(--global--color-border);
+}
+
+.primary-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.primary-navigation li {
+    margin-right: 1.5rem;
+}
+
+.primary-navigation a {
+    color: var(--global--color-primary);
+    text-decoration: none;
+    padding: 1rem 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.primary-navigation a:hover {
+    color: var(--global--color-cyan);
+}
+
+/* FOOTER */
+.footer-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-widget {
+    margin-bottom: 1.5rem;
+}
+
+.footer-widget h3 {
+    color: var(--global--color-white);
+    margin-bottom: 1rem;
+}
+
+.footer-widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-widget li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-widget a {
+    color: var(--global--color-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-widget a:hover {
+    color: var(--global--color-white);
+}
+
+/* PAGINATION */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    background-color: var(--global--color-white);
+    border: 1px solid var(--global--color-border);
+    border-radius: 4px;
+    color: var(--global--color-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: var(--global--color-cyan);
+    color: var(--global--color-white);
+    border-color: var(--global--color-cyan);
+}
+
+/* POSTS */
+.post {
+    margin-bottom: 3rem;
+}
+
+.post-title {
+    font-size: var(--global--font-size-xl);
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    color: var(--global--color-secondary);
+    font-size: var(--global--font-size-sm);
+    margin-bottom: 1rem;
+}
+
+.post-content {
+    margin-bottom: 1.5rem;
+}
+
+.post-footer {
+    border-top: 1px solid var(--global--color-border);
+    padding-top: 1rem;
+}
+
+/* COMMENTS */
+.comment-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comment {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--global--color-border);
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment-avatar {
+    float: left;
+    margin-right: 1.5rem;
+}
+
+.comment-content {
+    overflow: hidden;
+}
+
+.comment-author {
+    font-weight: var(--heading--font-weight);
+    margin-bottom: 0.5rem;
+}
+
+.comment-meta {
+    color: var(--global--color-secondary);
+    font-size: var(--global--font-size-sm);
+    margin-bottom: 1rem;
+}
+
+.comment-form {
+    margin-top: 2rem;
+}
+
+/* WIDGETS */
+.widget {
+    margin-bottom: 2rem;
+}
+
+.widget-title {
+    font-size: var(--global--font-size-lg);
+    margin-bottom: 1rem;
+}
+
+.widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget li {
+    margin-bottom: 0.5rem;
+}
+
+.widget a {
+    color: var(--global--color-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.widget a:hover {
+    color: var(--global--color-purple);
+}
+
+/* MISC */
+.read-more {
+    display: inline-block;
+    background-color: var(--global--color-cyan);
+    color: var(--global--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: var(--global--color-purple);
+    color: var(--global--color-white);
+}
+
+/* ACCESSIBILITY */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* CUSTOM BLOCKS */
+.wp-block-custom-heading {
+    font-family: var(--global--font-primary);
+    font-size: var(--global--font-size-xxl);
+    font-weight: var(--heading--font-weight);
+    line-height: var(--global--line-height-heading);
+    color: var(--global--color-secondary);
+    margin: 2rem 0;
+}
+
+.wp-block-custom-button {
+    display: inline-block;
+    background-color: var(--global--color-cyan);
+    color: var(--global--color-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.wp-block-custom-button:hover {
+    background-color: var(--global--color-purple);
+    color: var(--global--color-white);
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media only screen and (max-width: 768px) {
+    .site-main {
+        padding: 1rem;
+    }
+
+    .post-title {
+        font-size: var(--global--font-size-lg);
+    }
+
+    .footer-widgets {
+        grid-template-columns: 1fr;
+    }
+
+    .primary-navigation ul {
+        flex-direction: column;
+    }
+
+    .primary-navigation li {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
